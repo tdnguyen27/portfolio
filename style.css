@@ -1,3 +1,9 @@
+h1 {
+  font-size: 400%;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+}
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
@@ -29,7 +35,7 @@ nav a {
   padding-bottom: 0.4em;
 }
 :root {
-  --color-accent: oklch(0.5415 0.1246 76.38);
+  --color-accent: oklch(0.681 0.1389 60.36);
 }
 html {
   accent-color: var(--color-accent);
@@ -39,7 +45,7 @@ nav a:hover {
   border-bottom-style: solid;
   border-bottom-color: var(--color-accent);
   padding-bottom: 0.4em;
-  background-color: oklch(0.8947 0.0752 76.38);
+  background-color: oklch(89.813% 0.06682 60.908);
 }
 form {
   display: grid;
@@ -56,4 +62,18 @@ form button {
 }
 form label, input, textarea, button {
   gap: 1em;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 1em;
+}
+.projects article h2 {
+  margin: 0;
 }
