@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tori Nguyen: Personal site and portfolio</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../projects/index.html">Projects</a></li>
-            <li><a href="index.html">Contact</a></li>
-            <li><a href="https://github.com/tdnguyen27" target="_blank">Profile</a></li>
-            <li><a href="../CV/index.html">Cover Letter</a></li>
-        </ul>
+        <a href="../index.html">Home</a>
+        <a href="../projects/index.html">Projects</a>
+        <a class="current" href="index.html">Contact</a>
+        <a href="https://github.com/tdnguyen27" target="_blank">Profile</a>
+        <a href="../CV/index.html">Cover Letter</a>
     </nav>    
     <h1>Contact</h1>
     <form action="mailto:ton010@ucsd.edu" method="post" enctype="text/plain">
-        <label for="email">Email:</label>
-        <input name="email" type="email">
+        <label for="email">Email:
+            <input name="email" type="email">
+        </label>
 
-        <label for="subject">Subject</label>
-        <input name="subject">
+        <label for="subject">Subject:
+            <input name="subject">
+        </label>
+        
+        <label for="body">Body:
+            <textarea name="body"></textarea>
+        </label>
 
-        <label for="body">Body</label>
-        <textarea name="body"></textarea>
-
-        <button>Submit</button>
+        <button>Send</button>
     </form>
-
 </body>
 </html>
