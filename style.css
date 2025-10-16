@@ -7,19 +7,19 @@ h1, h2, h3, h4, h5, h6 {
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
-	 */
+	*/
   font: 100%/1.5 system-ui;
   max-width: 100ch;
   margin-inline: auto;
   padding: 2em 2em;
 }
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   margin-bottom: 2em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
-
+  border-bottom-color: var(--border-color);
 }
 nav a {
   flex: 1;
@@ -39,13 +39,14 @@ nav a {
 }
 html {
   accent-color: var(--color-accent);
+  color-scheme: light dark;
 }
 nav a:hover {
   border-bottom-width: 0.4em;
   border-bottom-style: solid;
   border-bottom-color: var(--color-accent);
   padding-bottom: 0.4em;
-  background-color: oklch(89.813% 0.06682 60.908);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 form {
   display: grid;
@@ -76,4 +77,11 @@ form label, input, textarea, button {
 }
 .projects article h2 {
   margin: 0;
+}
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
 }
