@@ -73,6 +73,7 @@ let select = document.querySelector('label.color-scheme select');
 if ('colorScheme' in localStorage) {
   let usersaved = localStorage.getItem('colorScheme');
   select.value = usersaved;
+  document.documentElement.style.setProperty('color-scheme', select.value);
 }
 
 select.addEventListener('input', function (event) {
