@@ -74,7 +74,7 @@ select.addEventListener('input', function (event) {
   localStorage.colorScheme = event.target.value;
 });
 
-/////////////////////////////////////////////// Lab 4 /////////////////////////////////////////////
+/////////////////////////////////////////////// Lab 4 /////////////////////////////////////////////////
 // file to load project data from a JSON file and dynamically display it on the Projects page
 
 // in case url fail to get project url 
