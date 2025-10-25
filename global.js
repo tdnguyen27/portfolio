@@ -93,12 +93,12 @@ export async function fetchJSON(url) {
 }
 
 // create render func to dynamically generate and display project content
-// project object, containerElement where project will be displayed 
+// project is an object, containerElement is where project will be displayed 
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
   // clear prior existing content in container
   containerElement.innerHTML = '';
 
-  for (current in project) {
+  for (const current of project) {
     const article = document.createElement('article');
 
     article.innerHTML = `
@@ -111,5 +111,10 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
     // Ensure containerElement is a valid DOM element in your tests
     // expect(containerElement).toBeInstanceOf(HTMLElement);
   }
+}
+
+// display github api 
+export async function fetchGithubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
 }
 
