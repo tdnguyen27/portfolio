@@ -85,3 +85,9 @@ form label, input, textarea, button {
   font-size: 80%;
   font-family: inherit;
 }
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
