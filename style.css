@@ -86,8 +86,43 @@ form label, input, textarea, button {
   font-family: inherit;
 }
 #projects-pie-plot {
+  flex: 1; /* grows and shrink relative to legend */
   max-width: 20em;
+  height: auto;
+  aspect-ratio: 1 / 1;
   margin-block: 2em;
-
   overflow: visible;
+}
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  flex: 1;
+  min-inline-size: 10rem;
+  gap: 0.5em;
+  margin: 2em;
+  padding: 0.5em;
+  border-width: 0.1em;
+  border-style: solid;
+  border-color: oklch(85% 3% 200);
+}
+.swatch-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color);
+  border-radius: 50%;
+  margin-right: 0.5em; 
+  vertical-align: middle;
+}
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+  align-items: center;
+  gap: 0.5em;
 }

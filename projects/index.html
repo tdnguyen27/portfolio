@@ -9,8 +9,18 @@
 <body>
     <h1 class="projects-title"></h1>
 
-    <!--viewbox defines position and dimension of svg element-->
-    <svg id="projects-pie-plot" viewBox="-50 -50 100 100"></svg>
+    <div class="container">
+        <!--viewbox defines position and dimension of svg element-->
+        <svg id="projects-pie-plot" viewBox="-50 -50 100 100"></svg>
+        <ul class="legend"></ul>
+    </div>
+
+    <input
+        class="searchBar"
+        type="search"
+        aria-label="Search projects"
+        placeholder="🔍 Search projects…"
+    />
 
     <script type="module" src="../global.js"></script>
 
