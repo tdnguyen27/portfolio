@@ -32,6 +32,7 @@ let data = rolledData.map(([year, count]) => {
 let sliceGenerator = d3.pie().value((d) => d.value);  // tell it how to access the values in our data 
 let arcData = sliceGenerator(data);
 let arcs = arcData.map((d) => arcGenerator(d)); // feed these objects to our arcGenerator() to create the paths for the slices
+console.log(arcs)
 */
 
 /*
@@ -114,6 +115,7 @@ searchInput.addEventListener('input', (event) => {
   renderPieChart(filteredProjects);
 });
 
+/*
 let selectedIndex = -1;
 let svg = d3.select('svg');
 svg.selectAll('path').remove();
@@ -139,6 +141,4 @@ arcs.forEach((arc, i) => {
         });
     });
 });
-
-
-
+*/
