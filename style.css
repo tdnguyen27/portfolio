@@ -64,6 +64,45 @@ form button {
 form label, input, textarea, button {
   gap: 1em;
 }
+#profile-stats {
+  margin-top: 2.5rem;
+}
+/* container */
+#profile-stats {
+  margin-top: 2.5rem;
+}
+/* title */
+#profile-stats h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+/* lay out the stats */
+#profile-stats dl {
+  display: grid;
+  /* fill DOWN first → dt, dd become one column */
+  grid-auto-flow: column;
+  /* each column has 2 rows: label + number */
+  grid-template-rows: auto auto;
+  column-gap: 4rem;
+  row-gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+}
+/* labels */
+#profile-stats dt {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+/* numbers */
+#profile-stats dd {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1;
+}
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -141,4 +180,120 @@ path {
   &:is(path) {
     fill: var(--color);
   }
+}
+/* the whole card */
+.summary-card {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 1.5rem 2rem 1.5rem;
+  max-width: 1100px;
+  margin-top: 1.5rem;
+}
+
+/* title */
+.summary-card > h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+/* the row of stats */
+.summary-card .stats {
+  display: grid;
+  grid-auto-flow: column;         /* fill DOWN, then go to next column */
+  grid-template-rows: auto auto;  /* 1st row = label, 2nd row = value */
+  column-gap: 3rem;
+  row-gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* labels: COMMITS, FILES, ... */
+.summary-card .stats dt {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #6b7280;  /* gray */
+}
+
+/* values: 59, 11, 898 ... */
+.summary-card .stats dd {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+.gridlines line {
+  stroke: #ccc;        /* lighter gray line color */
+  stroke-opacity: 0.2; /* make them semi-transparent */
+  shape-rendering: crispEdges; /* keeps lines sharp */
+}
+.gridlines path {
+  stroke-width: 0;     /* removes the vertical domain line */
+}
+dl.info {
+  display: grid;                     /* make <dt> and <dd> align in two columns */
+  grid-template-columns: auto 1fr;   /* first column = label, second = value */
+  gap: 0.25rem 0.05;                 /* spacing between rows and columns */
+  margin: 0;                         /* remove default margins */
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+  font-size: 0.9rem;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+.tooltip {
+  position: fixed;   /* fixed to the viewport */
+  top: 1em;          /* small offset from top */
+  left: 1em;         /* small offset from left */
+  z-index: 999;      /* stay on top of everything */
+}
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+circle:hover {
+  transform: scale(1.5);
+}
+circle.selected {
+  fill: #ff6b6b;
+}
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+#language-breakdown {
+  display: grid !important;                 /* override .stats if it set flex/grid */
+  grid-auto-flow: column;                   /* fill DOWN first, then make new column */
+  grid-template-rows: repeat(3, auto);      /* exactly 3 rows = name, lines, percent */
+  column-gap: 3rem;                         /* space between languages */
+  row-gap: 0.25rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+#language-breakdown dt {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+#language-breakdown dd {
+  margin: 0;
 }
