@@ -12,6 +12,7 @@ let pages = [ // create array of dictionary for url link and label
   { url: 'projects/', title: 'Projects' },
   { url: 'contact/', title: 'Contact'},
   { url: 'CV/', title: 'Cover Letter'},
+  { url: 'meta/', title:'Meta'},
   { url: 'https://github.com/tdnguyen27', title: 'GitHub Page'}
 ];
 
@@ -44,7 +45,6 @@ for (let p of pages) {
   };
   
 }
-
 
 ///////////////////////////// Step 4: Dark Mode /////////////////////////////
 document.body.insertAdjacentHTML(
