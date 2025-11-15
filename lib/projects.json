@@ -1,9 +1,10 @@
 [
 	{
-		"title": "Lorem ipsum dolor sit.",
+		"title": "Let's get biking!",
 		"year": "2025",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor quos, quod assumenda explicabo odio, nobis ipsa laudantium quas eum veritatis ullam sint porro minima modi molestias doloribus cumque odit."
+		"description": "An interactive visualization of bike traffic in the Boston area during different times of the day",
+		"url": "https://tdnguyen27.github.io/bike_enthusiasts/"
 	},
 	{
 		"title": "Architecto minima sed omnis?",
