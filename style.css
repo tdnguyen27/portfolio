@@ -261,6 +261,10 @@ circle {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
+
+  @starting-style {
+  r: 0;
+  }
 }
 circle:hover {
   transform: scale(1.5);
@@ -296,4 +300,87 @@ circle.selected {
 }
 #language-breakdown dd {
   margin: 0;
+}
+.slider-container {
+  flex: 1;
+  align-items: baseline;
+}
+#commit-time {
+  display:block;
+  text-align: right;
+}
+#commit-progress {
+  width: 80%;
+  vertical-align: middle;
+}
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-top: 2rem;
+
+  /* keep the files section in the left column area only */
+  max-width: 40rem;     /* adjust as you like; ~640px works well */
+  margin-right: auto;   /* align it to the left */
+
+  > div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  dt {
+    grid-column: 1;
+  }
+
+  dd {
+    grid-column: 2;
+  }
+}
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color);
+  border-radius: 50%;
+}
+#files > div > dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+}
+#files dt small {
+  display: block;      /* its own line under the filename */
+  font-size: 0.8rem;   /* smaller text */
+  opacity: 0.6;        /* less emphasis */
+  margin-top: 0.15em;
+}
+
+#scrolly-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  padding-bottom: 7vh;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+.step {
+  padding-bottom: 20px;
 }

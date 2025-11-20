@@ -10,9 +10,28 @@
     <h1>Meta</h1>
     <script type="module" src="../global.js"></script>
     <p>This page includes stats on the code of this website</p>
+
+    <div class="slider-container">
+        <label>Show commits until:
+            <input type="range" id="commit-progress" min="0" max="100">
+            <time id="commit-time"></time>
+        </label>
+    </div>
+
     <div id="stats"></div>
-    <h2>Commits by time of day</h2>
-    <div id="chart"></div>
+
+    <div id="scrolly-1">
+        <div id="scatter-story"></div>
+
+        <div id="scatter-plot">
+            <h2>Commits by time of day</h2>
+            <div id="chart"></div>
+
+            <p id="selection-count">No commits selected</p>
+            <dl id="language-breakdown" class="stats"></dl>
+        </div>
+    </div>
+
     <dl id="commit-tooltip" class="info tooltip" hidden>
         <dt>Commit</dt>
         <dd>
@@ -24,8 +43,17 @@
 
         <!-- Add: Time, author, lines edited -->
     </dl>
-    <p id="selection-count">No commits selected</p>
-    <dl id="language-breakdown" class="stats"></dl>
+
+    <dl id="files">
+        <!-- we want the following structure for each file:
+        <div>
+            <dt>
+            <code>{file.name}</code>
+            </dt>
+            <dd>{file.lines.length} lines</dd>
+        </div>
+        -->
+    </dl>
 
     <script src="main.js" type="module"></script>
 </body>
